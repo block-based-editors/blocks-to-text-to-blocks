@@ -15,5 +15,5 @@ For now a json_parser.js and python3_parser.js are available.
 
 Just open the editor.html in a browser no need for a server.
 
-
+https://block-based-editors.github.io/blocks_to_text_to_blocks/editor.html
 
