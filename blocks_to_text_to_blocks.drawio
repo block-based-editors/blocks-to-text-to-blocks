@@ -1,13 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2023-03-12T20:18:55.876Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="kpVSnIMYJ3QpxgWutwhl" version="21.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-13T22:34:11.077Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="MPRewK4Y_IedK6SQbKpT" version="21.0.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1834" dy="739" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1450" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-11" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-11" value="" style="group" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1" connectable="0">
           <mxGeometry x="230" y="170" width="150" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-12" value="text to blocks" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;" vertex="1" parent="y94H9ZXTlcnZzS6L6Hsz-11">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-12" value="text to blocks" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;align=center;" parent="y94H9ZXTlcnZzS6L6Hsz-11" vertex="1">
           <mxGeometry x="-10" y="-30" width="150" height="250" as="geometry" />
         </mxCell>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-6" value="Text Parse" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" parent="y94H9ZXTlcnZzS6L6Hsz-11" vertex="1">
@@ -25,7 +25,7 @@
             <mxPoint x="183.33333333333334" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="y94H9ZXTlcnZzS6L6Hsz-11" source="TvIYaoPbM7HeHV1W7y_1-1" target="G9HIznpjkjFSXy2kpZZQ-0">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="y94H9ZXTlcnZzS6L6Hsz-11" source="TvIYaoPbM7HeHV1W7y_1-1" target="G9HIznpjkjFSXy2kpZZQ-0" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="TvIYaoPbM7HeHV1W7y_1-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="TvIYaoPbM7HeHV1W7y_1-32" edge="1">
@@ -159,13 +159,13 @@
         <mxCell id="G9HIznpjkjFSXy2kpZZQ-3" value="Parse with Rascal, Lark, ANTRL, ... generate block and keep locations" style="ellipse;shape=cloud;labelPadding=0;verticalAlign=middle;align=center;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-190" y="137.5" width="220" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-0" value="Using the &lt;a href=&quot;https://github.com/block-based-editors/blockly-visitor&quot;&gt;block-visitor&lt;/a&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-0" value="Using the &lt;a href=&quot;https://github.com/block-based-editors/blockly-visitor&quot;&gt;block-visitor&lt;/a&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-190" y="290" width="220" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-6" value="TMDIFF&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;diff on two block diagrams based on replacing ids with lines numbers&amp;nbsp;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-6" value="TMDIFF&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;diff on two block diagrams based on replacing ids with lines numbers&amp;nbsp;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="630" y="570" width="230" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-7" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.07;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TvIYaoPbM7HeHV1W7y_1-7" target="y94H9ZXTlcnZzS6L6Hsz-6">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-7" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.07;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TvIYaoPbM7HeHV1W7y_1-7" target="y94H9ZXTlcnZzS6L6Hsz-6" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="590" y="460" as="sourcePoint" />
             <mxPoint x="490" y="210" as="targetPoint" />
@@ -180,7 +180,7 @@
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-2" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="WIyWlLk6GJQsqaUBKTNV-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-1" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.96;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="G9HIznpjkjFSXy2kpZZQ-0" target="y94H9ZXTlcnZzS6L6Hsz-0">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-1" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.96;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="G9HIznpjkjFSXy2kpZZQ-0" target="y94H9ZXTlcnZzS6L6Hsz-0" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="390" y="300" as="sourcePoint" />
             <mxPoint x="440" y="250" as="targetPoint" />
@@ -197,10 +197,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-13" value="convert blocks diff to text patches is easy for token change, but creation and delete have influence on parent, also need to rerender, with pretty text is ok, but perserve of the text layout is not yet done (hard)&amp;nbsp;&amp;nbsp;generated the changed ddf but preserve the layout and comments. This &lt;font style=&quot;font-size: 12px;&quot;&gt;is described in article: &lt;a style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, system-ui, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Web&amp;quot;, sans-serif; text-align: start; background-color: initial;&quot; tabindex=&quot;-1&quot; title=&quot;https://eelcovisser.org/publications/2011/jongev11.pdf&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot; href=&quot;https://eelcovisser.org/publications/2011/JongeV11.pdf&quot;&gt;https://eelcovisser.org/publications/2011/JongeV11.pdf&lt;/a&gt;&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, system-ui, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Web&amp;quot;, sans-serif; text-align: start; background-color: initial;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;text-align: start; background-color: initial;&quot;&gt;An Algorithm for Layout Preservation in Refactoring Transformations, it is also referred in &lt;/span&gt;&lt;a style=&quot;text-align: start; background-color: initial;&quot; tabindex=&quot;-1&quot; title=&quot;https://repository.tudelft.nl/islandora/object/uuid:624065f9-a535-49eb-bb13-c5ef20dcf11e/datastream/obj/download&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot; href=&quot;https://repository.tudelft.nl/islandora/object/uuid:624065f9-a535-49eb-bb13-c5ef20dcf11e/datastream/OBJ/download&quot;&gt;https://repository.tudelft.nl/islandora/object/uuid:624065f9-a535-49eb-bb13-c5ef20dcf11e/datastream/OBJ/download&lt;/a&gt;&lt;span style=&quot;text-align: start; background-color: initial;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;text-align: start; background-color: initial;&quot;&gt;Implementing Refactorings in the Spoofax Language Workbench. The code can be found in the github of spoofax: &lt;a style=&quot;&quot; tabindex=&quot;-1&quot; title=&quot;https://github.com/metaborg/spoofax/blob/d70821c017e7215ca71dfec2574c1faf02dcb0ca/meta.lib.spoofax/trans/libspoofax/editor/refactoring/construct-text.str2&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot; href=&quot;https://github.com/metaborg/spoofax/blob/d70821c017e7215ca71dfec2574c1faf02dcb0ca/meta.lib.spoofax/trans/libspoofax/editor/refactoring/construct-text.str2&quot;&gt;https://github.com/metaborg/spoofax/blob/d70821c017e7215ca71dfec2574c1faf02dcb0ca/meta.lib.spoofax/trans/libspoofax/editor/refactoring/construct-text.str2&lt;/a&gt; now only a translation from spoofax to lark and javascript needs te made&lt;/span&gt;&lt;/font&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-13" value="convert blocks diff to text patches is easy for token change, but creation and delete have influence on parent, also need to rerender, with pretty text is ok, but perserve of the text layout is not yet done (hard)&amp;nbsp;&amp;nbsp;generated the changed ddf but preserve the layout and comments. This &lt;font style=&quot;font-size: 12px;&quot;&gt;is described in article: &lt;a style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, system-ui, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Web&amp;quot;, sans-serif; text-align: start; background-color: initial;&quot; tabindex=&quot;-1&quot; title=&quot;https://eelcovisser.org/publications/2011/jongev11.pdf&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot; href=&quot;https://eelcovisser.org/publications/2011/JongeV11.pdf&quot;&gt;https://eelcovisser.org/publications/2011/JongeV11.pdf&lt;/a&gt;&lt;span style=&quot;font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, system-ui, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Web&amp;quot;, sans-serif; text-align: start; background-color: initial;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;text-align: start; background-color: initial;&quot;&gt;An Algorithm for Layout Preservation in Refactoring Transformations, it is also referred in &lt;/span&gt;&lt;a style=&quot;text-align: start; background-color: initial;&quot; tabindex=&quot;-1&quot; title=&quot;https://repository.tudelft.nl/islandora/object/uuid:624065f9-a535-49eb-bb13-c5ef20dcf11e/datastream/obj/download&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot; href=&quot;https://repository.tudelft.nl/islandora/object/uuid:624065f9-a535-49eb-bb13-c5ef20dcf11e/datastream/OBJ/download&quot;&gt;https://repository.tudelft.nl/islandora/object/uuid:624065f9-a535-49eb-bb13-c5ef20dcf11e/datastream/OBJ/download&lt;/a&gt;&lt;span style=&quot;text-align: start; background-color: initial;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;text-align: start; background-color: initial;&quot;&gt;Implementing Refactorings in the Spoofax Language Workbench. The code can be found in the github of spoofax: &lt;a style=&quot;&quot; tabindex=&quot;-1&quot; title=&quot;https://github.com/metaborg/spoofax/blob/d70821c017e7215ca71dfec2574c1faf02dcb0ca/meta.lib.spoofax/trans/libspoofax/editor/refactoring/construct-text.str2&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot; href=&quot;https://github.com/metaborg/spoofax/blob/d70821c017e7215ca71dfec2574c1faf02dcb0ca/meta.lib.spoofax/trans/libspoofax/editor/refactoring/construct-text.str2&quot;&gt;https://github.com/metaborg/spoofax/blob/d70821c017e7215ca71dfec2574c1faf02dcb0ca/meta.lib.spoofax/trans/libspoofax/editor/refactoring/construct-text.str2&lt;/a&gt; now only a translation from spoofax to lark and javascript needs te made&lt;/span&gt;&lt;/font&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="250" y="700" width="310" height="117.5" as="geometry" />
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-14" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;verticalAlign=top;align=center;horizontal=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TvIYaoPbM7HeHV1W7y_1-33" target="WIyWlLk6GJQsqaUBKTNV-3">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-14" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;verticalAlign=top;align=center;horizontal=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TvIYaoPbM7HeHV1W7y_1-33" target="WIyWlLk6GJQsqaUBKTNV-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="440" y="500" as="sourcePoint" />
             <mxPoint x="490" y="450" as="targetPoint" />
@@ -210,46 +210,49 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-15" value="apply text events&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;with&amp;nbsp;&lt;a style=&quot;border-color: var(--border-color);&quot; href=&quot;https://github.com/google/diff-match-patch&quot;&gt;diff_match_patch&lt;/a&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="y94H9ZXTlcnZzS6L6Hsz-14">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-15" value="apply text events&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;with&amp;nbsp;&lt;a style=&quot;border-color: var(--border-color);&quot; href=&quot;https://github.com/google/diff-match-patch&quot;&gt;diff_match_patch&lt;/a&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="y94H9ZXTlcnZzS6L6Hsz-14" vertex="1" connectable="0">
           <mxGeometry x="0.1505" y="1" relative="1" as="geometry">
             <mxPoint x="-22" y="-233" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-16" value="all text to blocks are the same" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-16" value="all text to blocks are the same" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-110" y="360" width="220" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-17" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=-0.013;entryY=0.892;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="y94H9ZXTlcnZzS6L6Hsz-16" target="y94H9ZXTlcnZzS6L6Hsz-12">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-17" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=-0.013;entryY=0.892;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="y94H9ZXTlcnZzS6L6Hsz-16" target="y94H9ZXTlcnZzS6L6Hsz-12" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="410" y="340" as="sourcePoint" />
             <mxPoint x="460" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-18" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.96;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TvIYaoPbM7HeHV1W7y_1-32" target="y94H9ZXTlcnZzS6L6Hsz-16">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-18" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.96;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="TvIYaoPbM7HeHV1W7y_1-32" target="y94H9ZXTlcnZzS6L6Hsz-16" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="160" y="440" as="sourcePoint" />
             <mxPoint x="460" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-19" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.96;exitY=0.7;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="y94H9ZXTlcnZzS6L6Hsz-16" target="TvIYaoPbM7HeHV1W7y_1-31">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-19" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.96;exitY=0.7;exitDx=0;exitDy=0;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="y94H9ZXTlcnZzS6L6Hsz-16" target="TvIYaoPbM7HeHV1W7y_1-31" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="90" y="130" as="sourcePoint" />
             <mxPoint x="220" y="440" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-20" value="feels strang to from text to blocks and than do a diff on the blocks, however now it is a AST diff instead of text diff thus removing all none relevant spaces" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-20" value="feels strang to from text to blocks and than do a diff on the blocks, however now it is a AST diff instead of text diff thus removing all none relevant spaces" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-230" y="401.25" width="280" height="112.5" as="geometry" />
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-22" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-22" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="50" y="460" as="sourcePoint" />
             <mxPoint x="150" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-23" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.104;entryY=0.325;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="y94H9ZXTlcnZzS6L6Hsz-13">
+        <mxCell id="y94H9ZXTlcnZzS6L6Hsz-23" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.104;entryY=0.325;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" target="y94H9ZXTlcnZzS6L6Hsz-13" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="230" y="580" as="sourcePoint" />
             <mxPoint x="460" y="270" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="5L3yyQb6l7l4lKQ25yjZ-0" value="Per block-based language we need a parser and a code generator, the concrete blocks can be create in the blocklybench by &#39;right click&#39; combine in the concrete workspace.&amp;nbsp;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="710" y="360" width="230" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
