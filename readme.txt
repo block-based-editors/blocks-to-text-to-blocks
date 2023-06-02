@@ -1,3 +1,11 @@
+
+Link to edit the drawio picture. 
+https://app.diagrams.net/#Hblock-based-editors%2Fblocks-to-text-to-blocks%2Fmain%2Fblocks_to_text_to_blocks.drawio
+
+Link to Github blocks
+https://blocks.githubnext.com/block-based-editors/blocks-to-text-to-blocks
+
+
 develop folder contains the develop
 Start the editor.html to use the editor. Open the example.json
 
