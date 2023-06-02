@@ -339,43 +339,30 @@ function totalBlockToCode(block, seperator)
   }
   return code
 }
-function blockToCode(block, input_file)
+
+function blockToCode(block, input_file, block_input)
 {
+
+  const child_tokens = block.data.tokens[block_input.name]
+  const before = '['; // child_tokens.before
+  const after = ']'; // child_tokens.after
+  const seperator = ','; // child_token.seperator
+  const seperator_on_last = ''; // child_token.seperator_on_last
 
   // render the tokens
   var code = '';
-  if (!block) return
+  if (!block) return code
 
-  code += block.data.tokens.before 
+  code += before
   
-  // render the fields that part is not changed
-  for (const [field, loc] of Object.entries(block.data.fields_loc)) {
-    // skip if field location is still the whole block
-    if (block.data.loc[0] != loc[0] || block.data.loc[1] != loc[1])
-    {
-      code += input_file.slice(loc[0],loc[1])
-    }    
-  }
-  code += block.data.tokens[2] // token between fields and inputs
-
   // render the statements
-  if (block.data.inputs_loc)
-  {
-    for (const [input, value] of Object.entries(block.data.inputs_loc)) {
-      // begin token of this input
-      code += '[' // block.data.input_tokens[input][0]
-    
-      seperator = ', ' // block.data.input_tokens[input][2]
-
-      // take the whole value of the target blocks and walk every next
-      code += totalBlockToCode(block.getInputTargetBlock(input), seperator, input_file)
-
-      // end token of this input
-      code += ']' // block.data.input_tokens[input][1]
-    }
-  }
+  // take the whole value of the target blocks and walk every next
+  code += totalBlockToCode(block.getInputTargetBlock(block_input.name), seperator, input_file)
   
-  code += block.data.tokens[1] // end token
+  // make sure the last seperator is added
+  code += seperator_on_last;  
+  // end token of this input
+  code += after // block.data.input_tokens[input][1]
   
   // no need to render the next as we only replace this one block 
   // with the inner childs
@@ -384,15 +371,23 @@ function blockToCode(block, input_file)
 
 }
 
-function render(block, input)
+function render(block, input, block_input)
 {
+  // only this block_input needs to be changed not the whole block
   var diff = []
-  diff.push([0, input.slice(0, block.data.loc[START_POS])])
-  var remove = input.slice(block.data.loc[START_POS], block.data.loc[END_POS])
+
+  const child_loc = block.data.inputs_loc[block_input.name]  
+
+  diff.push([0, input.slice(0, child_loc[START_POS])])
+  var remove = input.slice(child_loc[START_POS], child_loc[END_POS])
   diff.push([-1, remove])
   // TODO keep as much as possible in the blockToCode
-  diff.push([1, blockToCode(block, input) ])
-  diff.push([0, input.slice(block.data.loc[END_POS]-1,-1)])
+  diff.push([1, blockToCode(block, input, block_input) ])
+  
+  diff.push([0, input.slice(child_loc[END_POS]-1,-1)])
+  
+  
+  
   var dmp = new diff_match_patch();
   var patches = dmp.patch_make(diff)
   var code = dmp.patch_apply(patches, input)
@@ -463,7 +458,14 @@ function process_text_changes(old_json, new_json, old_short_to_long, new_short_t
       }
     }
   }
-  
+
+  // need to update the locs here as next changes can need them
+  if (input_changed)  // update the locs
+  {
+    text_changed()
+    input_changed = false
+  }
+
   // only add the data.value yet as we do not know where to place the block
   for (const id of ids_added)
   {
@@ -487,9 +489,16 @@ function process_text_changes(old_json, new_json, old_short_to_long, new_short_t
     var removed_block = old_complete_workspace.getBlockById(old_short_to_long[id])
     // get the surround_parent of the new workspace
     var surround_parent = workspace.getBlockById(removed_block.getSurroundParent().id)
-
-    render(surround_parent, input)
+    const block_input = surround_parent.getInputWithBlock(removed_block.getTopStackBlock())
+    render(surround_parent, input, block_input)
     input_changed = true
+  }
+
+  // need to update the locs here as next changes can need them
+  if (input_changed)  // update the locs
+  {
+    text_changed()
+    input_changed = false
   }
 
   for (const connection of connections_added)
@@ -504,16 +513,22 @@ function process_text_changes(old_json, new_json, old_short_to_long, new_short_t
     var surround_parent = block.getSurroundParent()
     if(ids_common.has(from_id) && ids_added.has(target_id))
     {
-      render(surround_parent, input)
+      // only the input of the surround parent needs a render
+      // "LIST" in case of dict_list_block
+      var block_input = surround_parent.getInputWithBlock(block.getTopStackBlock())
+
+      render(surround_parent, input, block_input)
       input_changed = true
     }
     
   }
-
+  // need to update the locs here as next changes can need them
   if (input_changed)  // update the locs
   {
     text_changed()
+    input_changed = false
   }
+
   return
 
 
@@ -1197,7 +1212,7 @@ function start()
 
   
 
-  search();
+  //search();
   document.getElementById("save").addEventListener("click", saveFile);
   document.getElementById("inputDiv").addEventListener("input", text_changed);
   
