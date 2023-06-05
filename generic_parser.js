@@ -142,7 +142,7 @@ function create_tree(input, tree)
             // all from the beginning till the first child or the end 
                                                 // whole document location
             var end = Math.min(block_json.inputs.CHILDS.block.data.loc[START_POS]-block_json.data.loc[START_POS], 
-                               block_json.data.value.length)-1
+                               block_json.data.value.length-1)
             opening = block_json.data.value.slice(0, end)
 
             var last_child = get_last_child(block_json)
@@ -151,7 +151,7 @@ function create_tree(input, tree)
             var begin = Math.max(end, last_child.data.loc[END_POS]-block_json.data.loc[START_POS])-1
             
             // last char of value
-            closing = block_json.data.value.slice(begin ,block_json.data.value.length)  
+            closing = block_json.data.value.slice(begin, block_json.data.value.length)  
         }
 
         // seperator is sampled between between child 0 and child 1
@@ -171,7 +171,7 @@ function create_tree(input, tree)
         }
         else
         {
-            indent = seperator.slice(seperator.indexOf('\n')+1,-1)
+            indent = seperator.slice(seperator.indexOf('\n')+1,seperator.length-1)
         }
     }
     seperator_on_last = false

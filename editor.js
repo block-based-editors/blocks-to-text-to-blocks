@@ -343,10 +343,12 @@ function totalBlockToCode(block, seperator)
 function blockToCode(block, input_file, block_input)
 {
 
-  const child_tokens = block.data.tokens[block_input.name]
-  const before = '['; // child_tokens.before
-  const after = ']'; // child_tokens.after
-  const seperator = ','; // child_token.seperator
+  // TODO should be block_input.nmae however to support more inputs...
+  // however this should be fixed in the variable replace
+  const child_tokens = block.data.tokens.CHILDS; //[block_input.name]
+  const before = child_tokens.before
+  const after = child_tokens.after
+  const seperator = child_tokens.seperator
   const seperator_on_last = ''; // child_token.seperator_on_last
 
   // render the tokens
@@ -452,18 +454,9 @@ function process_text_changes(old_json, new_json, old_short_to_long, new_short_t
           document.getElementById('inputDiv').value = code[0];
           input = code[0];
           input_changed = true
-    
-
         }
       }
     }
-  }
-
-  // need to update the locs here as next changes can need them
-  if (input_changed)  // update the locs
-  {
-    text_changed()
-    input_changed = false
   }
 
   // only add the data.value yet as we do not know where to place the block
@@ -483,22 +476,16 @@ function process_text_changes(old_json, new_json, old_short_to_long, new_short_t
   // only left: remove and connect
 
 
-  // goto the surround parent and render that one
+  // goto the surround parent and render the changed input
   for (const id of ids_removed)
   {
     var removed_block = old_complete_workspace.getBlockById(old_short_to_long[id])
     // get the surround_parent of the new workspace
     var surround_parent = workspace.getBlockById(removed_block.getSurroundParent().id)
-    const block_input = surround_parent.getInputWithBlock(removed_block.getTopStackBlock())
+    // make sure we use the removed_block surround parent as in the new workspace it is gone
+    const block_input = removed_block.getSurroundParent().getInputWithBlock(removed_block.getTopStackBlock())
     render(surround_parent, input, block_input)
     input_changed = true
-  }
-
-  // need to update the locs here as next changes can need them
-  if (input_changed)  // update the locs
-  {
-    text_changed()
-    input_changed = false
   }
 
   for (const connection of connections_added)
@@ -508,19 +495,21 @@ function process_text_changes(old_json, new_json, old_short_to_long, new_short_t
     var input_name = sp[1];
     var target_id = sp[2];
     var block = workspace.getBlockById(new_short_to_long[target_id])
-    // insert the text block here after the loc of the id_common
-    var parent = workspace.getBlockById(new_short_to_long[from_id])
-    var surround_parent = block.getSurroundParent()
-    if(ids_common.has(from_id) && ids_added.has(target_id))
+    if (block) // the block can be removed
     {
-      // only the input of the surround parent needs a render
-      // "LIST" in case of dict_list_block
-      var block_input = surround_parent.getInputWithBlock(block.getTopStackBlock())
+      // insert the text block here after the loc of the id_common
+      var parent = workspace.getBlockById(new_short_to_long[from_id])
+      var surround_parent = block.getSurroundParent()
+      if(ids_common.has(from_id) && ids_added.has(target_id))
+      {
+        // only the input of the surround parent needs a render
+        // "LIST" in case of dict_list_block
+        var block_input = surround_parent.getInputWithBlock(block.getTopStackBlock())
 
-      render(surround_parent, input, block_input)
-      input_changed = true
+        render(surround_parent, input, block_input)
+        input_changed = true
+      }
     }
-    
   }
   // need to update the locs here as next changes can need them
   if (input_changed)  // update the locs
@@ -1127,6 +1116,7 @@ function inject()
   workspace.name="Concrete"
 }
 
+var click_loc = 0
 function mySelection(event) {
   if (event.type == "click" && event.blockId )
   {
@@ -1134,6 +1124,19 @@ function mySelection(event) {
     var input = document.getElementById('inputDiv')
     console.log(event.blockId)
     input.setSelectionRange(block.data.loc[0], block.data.loc[1]);
+    document.getElementById('codeDiv').value = block.data.tokens.before
+    if (click_loc % 3 ==1 && block.data?.fields_loc?.KEY) {
+        input.setSelectionRange(block.data.fields_loc.KEY[0], block.data.fields_loc.KEY[1]);
+       // document.getElementById('codeDiv').value = block.data.tokens.KEY.before
+    }
+
+    if (click_loc % 3 ==2 && block.data?.inputs_loc?.LIST) {
+        input.setSelectionRange(block.data.inputs_loc.LIST[0], block.data.inputs_loc.LIST[1]);
+        document.getElementById('codeDiv').value = block.data.tokens.LIST.before
+        
+    }
+    click_loc +=1
+
     input.focus();
   }
   if (event.type == 'click' && !event.blockId)
@@ -1152,7 +1155,8 @@ function get_example()
 
 function get_json_example()
 {
-    const text='{"b":{"C":{"d":[1]}}}'
+    //const text='{"b":{"C":{"d":[1,2,3]}}}'
+    const text = '{"B":[1,2,3]}'
 //`
 //{"a":3,"b":3,"c":[3, 2, "b"]}
 //`
@@ -1459,6 +1463,7 @@ function process_blocks_changes(old_json, new_json, old_short_to_long, new_short
     json.ids = [block_id]
     json.json = {type: block.type, id: block_id, data:{loc:new_block.data.loc, 
                                                        value:new_block.data.value,
+                                                       inputs_loc:new_block.data.inputs_loc,
                                                        fields_loc:new_block.data.fields_loc}}
     console.log(json)
     json.xml = "<block type=\"" + block.type +"\" id=\"" + block_id +"\"></block>"
@@ -1606,6 +1611,7 @@ function process_blocks_changes(old_json, new_json, old_short_to_long, new_short
     {
       block.data.loc = new_block.data.loc
       block.data.fields_loc = new_block.data.fields_loc 
+      block.data.inputs_loc = new_block.data.inputs_loc
       block.data.value = new_block.data.value
       block.data.tokens = new_block.data.tokens
     }
